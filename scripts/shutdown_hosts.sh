@@ -4,18 +4,18 @@ USUARIO=root
 CMD="sudo"
 
 shutdown_hosts() {
-  $CMD ssh $USUARIO@tiger "sudo halt"
+  $CMD ssh $USUARIO@tiger "sudo shutdown -h now"
   sleep 2
   echo "Tiger is down :("
-  $CMD ssh $USUARIO@horse "sudo halt"
+  $CMD ssh $USUARIO@horse "sudo shutdown -h now"
   sleep 2
   echo "Horse is down :("
-  $CMD ssh $USUARIO@monkey "sudo halt"
+  $CMD ssh $USUARIO@monkey "sudo shutdown -h now"
   sleep 2
   echo "Monkey is down :("
   echo "Elephant is going down ..."
   sleep 5
-  sudo init 0
+  sudo shutdown -h now
 }
 
 
